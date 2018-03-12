@@ -1,0 +1,12 @@
+
+bills = [20,50,100,200,500,1000]
+    change = p - c
+    result = -1
+    if change in bills:
+        result = 0
+    elif change not in bills:
+        for index, bill in enumerate(bills):
+            if abs(bill - change) < 9:
+                result = bill-change
+    return result
+    
