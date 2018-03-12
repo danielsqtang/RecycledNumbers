@@ -1,0 +1,22 @@
+def possibleRecycled(x):
+    possibleRecycledInt = []
+    y = str(abs(x))
+    for a in range(len(y)):
+        z = y[a+1:] + y[:a+1]
+        if z[0] != '0':
+            possibleRecycledInt.append(int(z))
+    print (possibleRecycledInt)
+    return possibleRecycledInt
+
+def uniqueRecycledPairs(A):
+    count = 0
+    for i in range(n):
+        for j in range(n):
+            lenOne = len(str(abs(A[i])))
+            lenTwo = len(str(abs(A[j])))
+            if lenOne == lenTwo and lenOne > 1 and lenTwo > 1:
+                if A[i] % 10 < A[j] % 10:
+                    print (A[j])
+                    if A[j] in possibleRecycled(A[i]):
+                        count += 1
+    return count
